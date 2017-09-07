@@ -9,22 +9,33 @@ logo.style.border = "1px dashed pink";
 
 var links = document.getElementsByTagName("a");
 
-for(var i=0; i<5; i++){
+for(var i=0; i<links.length; i++){
     console.log(links[i].getAttribute("href"));
 }
 
-for(var i=0; i<5; i++){
+for(var i=0; i<links.length; i++){
     links[i].setAttribute("href", "http://www.bing.com");
 }
 
-for(var i=0; i<5; i++){
+for(var i=0; i<links.length; i++){
     console.log(links[i].getAttribute("href"));
 }
 
-for(var i=0; i<5; i++){
+for(var i=0; i<links.length; i++){
     links[i].style.background = "pink";
 }
 
-for(var i=0; i<5; i++){
+for(var i=0; i<links.length; i++){
     links[i].style.color = "orange";
+}
+
+logo.addEventListener("click", function(){
+    console.log("You clicked on the logo!");
+    logo.style.border = "1px solid yello";
+});
+
+for(var i=0; i<links.length; i++){
+    links[i].addEventListener("click", function(){
+    	this.style.background = "green"
+    });
 }
